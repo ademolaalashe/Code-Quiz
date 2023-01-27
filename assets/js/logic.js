@@ -12,6 +12,12 @@ const initials = document.getElementById("initials");
 const submit = document.getElementById("submit");
 const feedback = document.getElementById("feedback");
 
+function end() {
+  questionsBox.classList.add("hide");
+  endScreen.classList.remove("hide");
+}
+
+
 // We are adding event listener to innitialize the start function when the button in clicked
 
 startButton.addEventListener("click", start);
@@ -20,13 +26,37 @@ function start() {
   startScreen.classList.add("hide");
   questionsBox.classList.remove("hide");
   // On the start, start the timer
+  timeInterval()
 }
 
 // How to access the value of the key inside the object
 console.log(codeQuiz[0].options);
 console.log(codeQuiz[0].question);
 
-//telling to set the text inside h2 to the value I want
+// Setting timer for the quiz
+
+let count = 70;
+let timeInterval = () => {
+  
+setInterval(function(){
+  // console.log(count);
+  count--;
+  if(count === 0) {
+    stopInterval() 
+    endScreen
+  }
+}, 1000);
+}
+
+let stopInterval = function() {
+  // console.log("Time is up!");
+  clearInterval(timeInterval);
+}
+
+timeDisplay.innerText = count
+
+
+//telling to set the text inside h2 to the value wanted
 questionTitle.innerText = codeQuiz[0].question;
 
 let answers = codeQuiz[0].options;
@@ -47,10 +77,16 @@ function checkAnswer(event) {
   //get the value of the button
   let selectedAnswer = event.target.value;
 
-  if (selectedAnswer === codeQuiz[0].answer) {
+  if (selectedAnswer === codeQuiz[0].answer){
     console.log("correct answer");
+    feedback.innerText = ("correct");
+  }
+  else{
+    feedback.innerText = ("wrong");
   }
 }
+
+
 
 // startScreenButton.addEventListener("click", start - screen);
 // timeDisplayButton.addEventListener("click", time);
