@@ -1,3 +1,6 @@
+
+// JavaScript questions 
+
 const codeQuiz = [
     {
         question: "Javascript is an _______ language?",
