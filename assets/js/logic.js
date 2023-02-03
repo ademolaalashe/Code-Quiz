@@ -18,7 +18,7 @@ function end() {
 }
 
 
-// We are adding event listener to innitialize the start function when the button in clicked
+// Adding event listener to innitialize the start function when the button in clicked
 
 startButton.addEventListener("click", start);
 // start();
@@ -46,6 +46,8 @@ setInterval(function(){
     endScreen
   }
 }, 1000);
+
+getQuestion();
 }
 
 let stopInterval = function() {
@@ -55,14 +57,23 @@ let stopInterval = function() {
 
 timeDisplay.innerText = count
 
+//Getting the questions and answer options
 
-//telling to set the text inside h2 to the value wanted
+function getQuestions(){
+  let presentQuestion = questions[presentQuestionIndex];
+  questionTitle.textContent = presentQuestion;
+  choices.innerHTML = "";
+  feedback.textContent = "";
+  feedback.style.display = "none";
+}
+
+//Telling to set the text inside h2 to the value wanted
 questionTitle.innerText = codeQuiz[0].question;
 
 let answers = codeQuiz[0].options;
 for (let i = 0; i < answers.length; i++) {
     let answerButton;
-  //create button inside
+  //Create button inside
 
   answerButton = document.createElement("button");
   choices.appendChild(answerButton);
@@ -74,7 +85,7 @@ for (let i = 0; i < answers.length; i++) {
 // Function for checking the correct answer
 function checkAnswer(event) {
     console.log('i was clicked')
-  //get the value of the button
+  //Get the value of the button
   let selectedAnswer = event.target.value;
 
   if (selectedAnswer === codeQuiz[0].answer){
