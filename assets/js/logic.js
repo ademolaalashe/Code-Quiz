@@ -47,7 +47,6 @@ setInterval(function(){
   }
 }, 1000);
 
-getQuestion();
 }
 
 let stopInterval = function() {
@@ -56,16 +55,6 @@ let stopInterval = function() {
 }
 
 timeDisplay.innerText = count
-
-//Getting the questions and answer options
-
-function getQuestions(){
-  let presentQuestion = questions[presentQuestionIndex];
-  questionTitle.textContent = presentQuestion;
-  choices.innerHTML = "";
-  feedback.textContent = "";
-  feedback.style.display = "none";
-}
 
 //Telling to set the text inside h2 to the value wanted
 questionTitle.innerText = codeQuiz[0].question;
