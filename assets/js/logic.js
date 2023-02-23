@@ -74,18 +74,39 @@ for (let i = 0; i < answers.length; i++) {
 }
 
 // Function for checking the correct answer
+
+let currentQuestionIndex = 0;
+
 function checkAnswer(event) {
-    console.log('i was clicked')
-  //Get the value of the button
+  // Get the value of the button
   let selectedAnswer = event.target.value;
 
-  if (selectedAnswer === codeQuiz[0].answer){
+  if (selectedAnswer === codeQuiz[currentQuestionIndex].answer) {
     console.log("correct answer");
-    feedback.innerText = ("correct");
-  }
-  else{
-    feedback.innerText = ("wrong");
+    feedback.innerText = "Correct";
+  } else {
+    console.log("wrong answer");
+    feedback.innerText = "Wrong";
     count -= 10; // reduce timer by 10 seconds
+  }
+
+  // Move to the next question
+  currentQuestionIndex++;
+  if (currentQuestionIndex >= codeQuiz.length) {
+    // End the quiz if we've reached the end of the questions
+    end();
+  } else {
+    // Otherwise, update the UI to display the next question
+    questionTitle.innerText = codeQuiz[currentQuestionIndex].question;
+    choices.innerHTML = ""; // clear previous choices
+    let answers = codeQuiz[currentQuestionIndex].options;
+    for (let i = 0; i < answers.length; i++) {
+      let answerButton = document.createElement("button");
+      choices.appendChild(answerButton);
+      answerButton.setAttribute("value", answers[i]);
+      answerButton.innerText = answers[i];
+      answerButton.addEventListener("click", checkAnswer);
+    }
   }
 }
 
