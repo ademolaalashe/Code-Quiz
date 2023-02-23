@@ -60,11 +60,9 @@ function checkAnswer(event) {
   let selectedAnswer = event.target.value;
 
   if (selectedAnswer === codeQuiz[currentQuestionIndex].answer) {
-    console.log("correct answer");
-    feedback.innerText = "Correct";
+    feedback.innerText = "Correct!";
   } else {
-    console.log("wrong answer");
-    feedback.innerText = "Wrong";
+    feedback.innerText = "Wrong. The correct answer is: " + codeQuiz[currentQuestionIndex].answer;
     count -= 10; // reduce timer by 10 seconds
   }
 
@@ -88,6 +86,9 @@ function checkAnswer(event) {
   }
 }
 
+
+
+
 // Initialize the first question
 let answers = codeQuiz[0].options;
 for (let i = 0; i < answers.length; i++) {
@@ -101,3 +102,8 @@ for (let i = 0; i < answers.length; i++) {
 submit.addEventListener('click', function(event) {
   // code to execute when submit button is clicked
 });
+
+// Final value of count minus any time penalties
+
+finalScore.innerText = 80 - (codeQuiz.length * 10) + count;
+
