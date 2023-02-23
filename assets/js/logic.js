@@ -37,19 +37,22 @@ function start() {
 // Set timer for the quiz
 
 let count = 80;
+let timerInterval;
+
 let timeInterval = () => {
   timeDisplay.innerText = count;
-  
-setInterval(function(){
-  // console.log(count);
-  count--;
-  if(count === 0) {
-    stopInterval() 
-    endScreen()
-  }
-}, 1000);
 
+  timerInterval = setInterval(function(){
+    count--;
+    timeDisplay.innerText = count;
+
+    if(count === 0) {
+      stopInterval();
+      end();
+    }
+  }, 1000);
 }
+
 
 let stopInterval = function() {
   // console.log("Time is up!");
