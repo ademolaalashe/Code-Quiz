@@ -19,13 +19,14 @@ function end() {
 
 // Quiz sound effect
 
-let sfxRight = new Audio("starter/assets/sfx/correct.wav");
-let sfxRight = new Audio("starter/assets/sfx/correct.wav");
+// let sfxRight = new Audio("starter/assets/sfx/correct.wav");
+// let sfxRight = new Audio("starter/assets/sfx/correct.wav");
 
 // Adding event listener to innitialize the start function when the button in clicked
 
 startButton.addEventListener("click", start);
-// start();
+
+
 function start() {
   startScreen.classList.add("hide");
   questionsBox.classList.remove("hide");
@@ -33,21 +34,18 @@ function start() {
   timeInterval()
 }
 
-// How to access the value of the key inside the object
-console.log(codeQuiz[0].options);
-console.log(codeQuiz[0].question);
+// Set timer for the quiz
 
-// Setting timer for the quiz
-
-let count = 70;
+let count = 80;
 let timeInterval = () => {
+  timeDisplay.innerText = count;
   
 setInterval(function(){
   // console.log(count);
   count--;
   if(count === 0) {
     stopInterval() 
-    endScreen
+    endScreen()
   }
 }, 1000);
 
@@ -87,6 +85,7 @@ function checkAnswer(event) {
   }
   else{
     feedback.innerText = ("wrong");
+    count -= 10; // reduce timer by 10 seconds
   }
 }
 
