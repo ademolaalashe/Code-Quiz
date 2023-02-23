@@ -17,6 +17,10 @@ function end() {
   endScreen.classList.remove("hide");
 }
 
+// Quiz sound effect
+
+let sfxRight = new Audio("starter/assets/sfx/correct.wav");
+let sfxRight = new Audio("starter/assets/sfx/correct.wav");
 
 // Adding event listener to innitialize the start function when the button in clicked
 
