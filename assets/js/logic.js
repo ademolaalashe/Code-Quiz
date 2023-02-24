@@ -61,6 +61,7 @@ function checkAnswer(event) {
 
   if (selectedAnswer === codeQuiz[currentQuestionIndex].answer) {
     feedback.innerText = "Correct!";
+    feedback.classList.remove('hide');
   } else {
     feedback.innerText = "Wrong. The correct answer is: " + codeQuiz[currentQuestionIndex].answer;
     count -= 10; // reduce timer by 10 seconds
