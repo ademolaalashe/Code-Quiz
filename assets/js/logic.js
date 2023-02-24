@@ -27,7 +27,7 @@ function start() {
 }
 
 // Set timer for the quiz
-let count = 80;
+let count = 70;
 let timerInterval;
 
 function timeInterval() {
@@ -64,6 +64,7 @@ function checkAnswer(event) {
   } else {
     feedback.innerText = "Wrong. The correct answer is: " + codeQuiz[currentQuestionIndex].answer;
     count -= 10; // reduce timer by 10 seconds
+    feedback.classList.remove('hide')
   }
 
   // Move to the next question
@@ -86,9 +87,6 @@ function checkAnswer(event) {
   }
 }
 
-
-
-
 // Initialize the first question
 let answers = codeQuiz[0].options;
 for (let i = 0; i < answers.length; i++) {
@@ -105,5 +103,5 @@ submit.addEventListener('click', function(event) {
 
 // Final value of count minus any time penalties
 
-finalScore.innerText = 80 - (codeQuiz.length * 10) + count;
+finalScore.innerText = 70 - (codeQuiz.length * 10) + count;
 
