@@ -64,7 +64,7 @@ function checkAnswer(event) {
   } else {
     feedback.innerText = "Wrong. The correct answer is: " + codeQuiz[currentQuestionIndex].answer;
     count -= 10; // reduce timer by 10 seconds
-    feedback.classList.remove('hide')
+    feedback.classList.remove('hide');
   }
 
   // Move to the next question
@@ -99,6 +99,7 @@ for (let i = 0; i < answers.length; i++) {
 
 submit.addEventListener('click', function(event) {
   // code to execute when submit button is clicked
+  location.href = "highscores.html";
 });
 
 // Final value of count minus any time penalties
