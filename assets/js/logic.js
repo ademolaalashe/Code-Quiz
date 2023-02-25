@@ -55,6 +55,9 @@ questionTitle.innerText = codeQuiz[0].question;
 
 let currentQuestionIndex = 0;
 
+
+let scores = 0;
+
 function checkAnswer(event) {
   // Get the value of the button
   let selectedAnswer = event.target.value;
@@ -108,4 +111,6 @@ submit.addEventListener('click', function(event) {
 // Final value of count minus any time penalties
 
 finalScore.innerText = 70 - (codeQuiz.length * 10) + count;
+
+
 
