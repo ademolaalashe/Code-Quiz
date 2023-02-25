@@ -99,3 +99,13 @@ function checkAnswer(event) {
   }
 
 }
+
+// This code is to initialize the first question
+let answers = codeQuiz[0].options;
+for (let i = 0; i < answers.length; i++) {
+  let answerButton = document.createElement("button");
+  choices.appendChild(answerButton);
+  answerButton.setAttribute("value", answers[i]);
+  answerButton.innerText = answers[i];
+  answerButton.addEventListener("click", checkAnswer);
+}
