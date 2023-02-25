@@ -85,8 +85,17 @@ function checkAnswer(event) {
   // End the quiz if we've reached the end of the questions
     end();
   } else {
-
-    
+     // Code to update the UI to display the next question
+     questionTitle.innerText = codeQuiz[currentQuestionIndex].question;
+     choices.innerHTML = ""; // clear previous choices
+     let answers = codeQuiz[currentQuestionIndex].options;
+     for (let i = 0; i < answers.length; i++) {
+       let answerButton = document.createElement("button");
+       choices.appendChild(answerButton);
+       answerButton.setAttribute("value", answers[i]);
+       answerButton.innerText = answers[i];
+       answerButton.addEventListener("click", checkAnswer);
+     }
   }
 
 }
