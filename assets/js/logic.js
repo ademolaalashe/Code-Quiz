@@ -77,4 +77,16 @@ function checkAnswer(event) {
     feedback.classList.remove('hide');
   }
 
+  answered = true; // Code marks that a question has been answered
+
+  // Code to move to the next question
+  currentQuestionIndex++;
+  if (currentQuestionIndex >= codeQuiz.length) {
+  // End the quiz if we've reached the end of the questions
+    end();
+  } else {
+
+    
+  }
+
 }
