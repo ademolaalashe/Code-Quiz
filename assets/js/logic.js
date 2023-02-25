@@ -70,6 +70,11 @@ function checkAnswer(event) {
     score +=1
     // This code is to display if the selected answer is correct
     feedback.classList.remove("hide");
+  } else {
+    feedback.innerText = "Wrong. The correct answer is: " + codeQuiz[currentQuestionIndex].answer;
+    count -= 10; // reduce timer by 10 seconds
+    // Code to display is answer is wrong
+    feedback.classList.remove('hide');
   }
 
 }
