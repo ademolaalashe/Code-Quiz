@@ -109,3 +109,12 @@ for (let i = 0; i < answers.length; i++) {
   answerButton.innerText = answers[i];
   answerButton.addEventListener("click", checkAnswer);
 }
+
+submit.addEventListener('click', function(event) {
+  // code to execute when submit button is clicked
+  if (!answered) {
+    score = 0; // if no question has been answered, set score to 0
+  }
+  finalScore.innerText = score;
+  location.href = "highscores.html";
+});
