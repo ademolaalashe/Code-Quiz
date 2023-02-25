@@ -56,61 +56,7 @@ questionTitle.innerText = codeQuiz[0].question;
 let currentQuestionIndex = 0;
 
 
-let scores = 0;
+let score = 0;
 
-function checkAnswer(event) {
-  // Get the value of the button
-  let selectedAnswer = event.target.value;
-
-  if (selectedAnswer === codeQuiz[currentQuestionIndex].answer) {
-    feedback.innerText = "Correct!";
-    // Code to display is answer is correct
-    feedback.classList.remove('hide');
-  } else {
-    feedback.innerText = "Wrong. The correct answer is: " + codeQuiz[currentQuestionIndex].answer;
-    count -= 10; // reduce timer by 10 seconds
-    // Code to display is answer is wrong
-    feedback.classList.remove('hide');
-  }
-
-  // Move to the next question
-  currentQuestionIndex++;
-  if (currentQuestionIndex >= codeQuiz.length) {
-    // End the quiz if we've reached the end of the questions
-    end();
-  } else {
-    // Otherwise, update the UI to display the next question
-    questionTitle.innerText = codeQuiz[currentQuestionIndex].question;
-    choices.innerHTML = ""; // clear previous choices
-    let answers = codeQuiz[currentQuestionIndex].options;
-    for (let i = 0; i < answers.length; i++) {
-      let answerButton = document.createElement("button");
-      choices.appendChild(answerButton);
-      answerButton.setAttribute("value", answers[i]);
-      answerButton.innerText = answers[i];
-      answerButton.addEventListener("click", checkAnswer);
-    }
-  }
-}
-
-// Initialize the first question
-let answers = codeQuiz[0].options;
-for (let i = 0; i < answers.length; i++) {
-  let answerButton = document.createElement("button");
-  choices.appendChild(answerButton);
-  answerButton.setAttribute("value", answers[i]);
-  answerButton.innerText = answers[i];
-  answerButton.addEventListener("click", checkAnswer);
-}
-
-submit.addEventListener('click', function(event) {
-  // code to execute when submit button is clicked
-  location.href = "highscores.html";
-});
-
-// Final value of count minus any time penalties
-
-finalScore.innerText = 70 - (codeQuiz.length * 10) + count;
-
-
-
+// variable to keep track of whether a question has been answered
+let answered = false;
