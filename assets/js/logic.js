@@ -60,3 +60,16 @@ let score = 0;
 
 // variable to keep track of whether a question has been answered
 let answered = false;
+
+function checkAnswer(event) {
+  // Code to get the value of the button
+  let selectedAnswer = event.target.value;
+
+  if (selectedAnswer === codeQuiz[currentQuestionIndex].answer) {
+    feedback.innerText = "Correct!";
+    score +=1
+    // This code is to display if the selected answer is correct
+    feedback.classList.remove("hide");
+  }
+
+}
