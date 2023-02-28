@@ -25,14 +25,6 @@ https://ademolaalashe.github.io/Code-Quiz/
 
 ![FDR](https://github.com/ademolaalashe/Code-Quiz/blob/main/assets/images/code-quiz-image2.png)
 
-![FDR](https://github.com/ademolaalashe/Code-Quiz/blob/main/assets/images/code-quiz-image3.png)
-
-![FDR](https://github.com/ademolaalashe/Code-Quiz/blob/main/assets/images/code-quiz-image4.png)
-
-![FDR](https://github.com/ademolaalashe/Code-Quiz/blob/main/assets/images/code-quiz-image5.png)
-
-![FDR](https://github.com/ademolaalashe/Code-Quiz/blob/main/assets/images/code-quiz-image6.png)
-
 ### Credits:
 
 JavaScript questions: https://www.interviewbit.com/javascript-mcq/
