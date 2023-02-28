@@ -21,3 +21,7 @@ highscores.forEach(function (score) {
   highscoresHTML += '<li>' + score.initials + ' - ' + score.score + '</li>';
 });
 highscoresList.innerHTML = highscoresHTML;
+
+// add event listener to "Clear Highscores" button
+const clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', clearHighscores);
