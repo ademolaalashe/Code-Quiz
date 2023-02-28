@@ -14,3 +14,10 @@ function clearHighscores() {
   localStorage.setItem('highscores', JSON.stringify(highscores));
   highscoresList.innerHTML = '';
 }
+
+// loop through highscores and add them to the list
+let highscoresHTML = '';
+highscores.forEach(function (score) {
+  highscoresHTML += '<li>' + score.initials + ' - ' + score.score + '</li>';
+});
+highscoresList.innerHTML = highscoresHTML;
