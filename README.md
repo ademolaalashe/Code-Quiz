@@ -19,11 +19,9 @@ https://github.com/ademolaalashe/Code-Quiz
 ### Link 2
 https://ademolaalashe.github.io/Code-Quiz/
 
-### Screenshots
+### Screenshot
 
 ![FDR](https://github.com/ademolaalashe/Code-Quiz/blob/main/assets/images/code-quiz-image1.png)
-
-![FDR](https://github.com/ademolaalashe/Code-Quiz/blob/main/assets/images/code-quiz-image2.png)
 
 ### Credits:
 
@@ -36,7 +34,3 @@ Alexandra Batrak - For taking the time to answer any questions I had. You can vi
 Tutor - Tutoring session also helped with further understanding.
 
 Teaching Assistant: For the encouragement and also answering questions I had.
-
-
-
-
