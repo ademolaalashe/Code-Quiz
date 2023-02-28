@@ -32,7 +32,18 @@ function timeInterval() {
     timeDisplay.innerText = count;
 
     if (count === 0) {
-      stopInterval();
+
+      // This code stop the interval when the count reaches 0
+      clearInterval(timerInterval); 
+      end();
+    }
+    else if (count < 0) {
+
+      // This code below stops the interval if the count goes below 0
+      clearInterval(timerInterval); 
+
+      // set the display to 0 if the count goes below 0
+      timeDisplay.innerText = 0; 
       end();
     }
   }, 1000);
