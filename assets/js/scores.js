@@ -7,3 +7,10 @@ let highscores = JSON.parse(localStorage.getItem('highscores')) || [];
 highscores.sort(function (a, b) {
   return b.score - a.score;
 });
+
+// function to clear highscores
+function clearHighscores() {
+  highscores = [];
+  localStorage.setItem('highscores', JSON.stringify(highscores));
+  highscoresList.innerHTML = '';
+}
